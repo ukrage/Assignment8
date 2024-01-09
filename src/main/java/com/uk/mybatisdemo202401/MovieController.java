@@ -24,5 +24,8 @@ public class MovieController {
         return movieMapper.findByNameContains(movieName);
     }
 
-    
+    @GetMapping("/director")
+    public List<Movie> findByDirector(@RequestParam String director) {
+        return movieMapper.findByDirectorContains(director);
+    }
 }

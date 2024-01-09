@@ -13,5 +13,6 @@ public interface MovieMapper {
     @Select("SELECT * FROM movies WHERE name LIKE CONCAT('%', #{name}, '%')")
     List<Movie> findByNameContains(String prefix);
 
-    
+    @Select("SELECT * FROM movies WHERE director LIKE CONCAT('%', #{director}, '%')")
+    List<Movie> findByDirectorContains(String director);
 }
